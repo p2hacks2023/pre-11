@@ -5,7 +5,6 @@
 
 void room2(){
   
-   rect(0, 0, bar, sizeY);
   //image(room1[0], bar, 0, sizeX, sizeY); //初期位置
 
   switch(page) {//ページの遷移コード（バグあり？）、関数などしっかり考えたほうが良いかも。下記の通りテンプレから考えていくのアリ
@@ -13,6 +12,7 @@ void room2(){
     image(room2[0], bar, 0, sizeX, sizeY); 
     arrowStraight();
     arrowRight();
+    arrowLeft();
     break;
   case 1://一歩進んだとこ
     image(room2[1], bar, 0, sizeX, sizeY); 
@@ -53,6 +53,7 @@ void room2(){
     arrowBack(); 
     if ((mouseX > 1153+bar && mouseX < 1275+bar) && (mouseY > 370 && mouseY < 450) && (pressed == true)) {
       page++;
+    pressed = false;
     }
     break;
   case 9: //カギ？拡大

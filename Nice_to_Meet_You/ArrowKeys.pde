@@ -1,4 +1,4 @@
- //<>//
+ //<>// //<>//
 PImage[] arrows = new PImage[4];
 int high = 200;
 
@@ -21,11 +21,16 @@ void arrowStraight() {
   trY = trY/2;
   image(arrows[0], trpX, trpY, trX, trY);//矢印描画
   if ((mouseX > trpX && mouseX < trpX + trX) && (mouseY > trpY && mouseY < trpY + trY) && (pressed == true)) {// 矢印をクリックでページ遷移変数を変える
-    if (page == 0 || page == 4) {
+    if (sean == 4 && page == 0) {//room4からroom3に戻る
+      page = 4;
+      sean = 3;
+    } else if (page == 0 || page == 4) {
       page++;
     } else if (page == 8) {
-      sean = 2;
+      pageReset();//次ページに遷移するのでページ変数などをリセット
+      sean++;
     }
+    pressed = false;
   }
 }
 
@@ -43,9 +48,17 @@ void arrowRight() {
       page += 2;
     } else if (page == 0 || page == 4) {
       page += 4;
+    } else if (sean == 4) {
+      if (page == 3) {
+        page--;
+      } else if (page == 2) {
+        page -= 2;
+      }
     }
+    pressed = false;
   }
 }
+
 
 void arrowLeft() {
   int trX = 145;
@@ -57,11 +70,23 @@ void arrowLeft() {
   trY = trY/2;
   image(arrows[2], trpX, trpY, trX, trY);//矢印描画
   if ((mouseX > trpX && mouseX < trpX + trX) && (mouseY > trpY && mouseY < trpY + trY) && (pressed == true)) {// 矢印をクリックでページ遷移変数を変える
-    if (page == 1 || page == 5) {
+    if (sean == 4) {
+      if (page == 2 || page == 3) {
+        page++;
+      } else if (page == 0)
+        page += 2;
+        
+        
+        
+    } else if (page == 1 || page == 5) {
       page++;
     } else if (page == 4) {
       page -= 4;
+    } else if (sean == 2 || sean == 3) {
+      sean--;
+      page = 4;
     }
+    pressed = false;
   }
 }
 
@@ -75,7 +100,14 @@ void arrowBack() {
   trY = trY/2;
   image(arrows[1], trpX, trpY, trX, trY);//矢印描画
   if ((mouseX > trpX && mouseX < trpX + trX) && (mouseY > trpY && mouseY < trpY + trY) && (pressed == true)) {// 矢印をクリックでページ遷移変数を変える
-    if (page == 1 || page == 5 || page == 9) {
+    if (sean == 4) {
+      if (page == 1 || page == 4) {
+        page--;
+      } else if (page == 0)
+        page++;
+    } else if (sean == 3 && page == 4) {
+      page += 4;
+    } else if (page == 1 || page == 5 || page == 9) {
       page--;
     } else if (page == 2 || page == 3) {
       page = 1;
@@ -84,9 +116,10 @@ void arrowBack() {
     } else if (page == 8) {
       page -= 4;
     }
+    pressed = false;
   }
 }
 
 
 
-//マウス押しっぱなしでずっと進み続けてしまうのでできれば改善したい!
+//マウス押しっぱなしでずっと進み続けてしまうのでできれば改善したい!→改善しました！俺の勝ち！！！

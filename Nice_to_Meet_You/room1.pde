@@ -8,7 +8,6 @@ int sizeY = 864;
 void room1() {
 
 
-  rect(0, 0, bar, sizeY);
   //image(room1[0], bar, 0, sizeX, sizeY); //初期位置
 
   switch(page) {//ページの遷移コード（バグあり？）、関数などしっかり考えたほうが良いかも。下記の通りテンプレから考えていくのアリ
@@ -54,13 +53,16 @@ void room1() {
   case 8://ドア前（右へ）
     image(room1[8], bar, 0, sizeX, sizeY); 
     arrowBack(); 
-    if ((mouseX > 1153+bar && mouseX < 1275+bar) && (mouseY > 370 && mouseY < 450) && (pressed == true)) {
+    if ((mouseX > 1153+bar && mouseX < 1275+bar) && (mouseY > 370 && mouseY < 450) && (pressed == true)) {//鍵穴？が押されたら遷移
       page++;
+    pressed = false;
     }
     break;
   case 9: //カギ？拡大
     image(room1[9], bar, 0, sizeX, sizeY); 
     arrowBack();
+    //もしギミックが解かれたら↓のように前矢印を表示
+    //arrowStraight();
     break;
   }
 }
