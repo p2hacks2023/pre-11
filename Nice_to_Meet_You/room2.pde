@@ -7,8 +7,8 @@ void room2() {
 
   //image(room1[0], bar, 0, sizeX, sizeY); //初期位置
 
-  switch(page) {//ページの遷移コード（バグあり？）、関数などしっかり考えたほうが良いかも。下記の通りテンプレから考えていくのアリ
-  case 0://一歩進んだとこ
+  switch(page) {
+  case 0://初期位置
     image(room2[0], bar, 0, sizeX, sizeY); 
     arrowStraight();
     arrowRight();

@@ -7,7 +7,6 @@ int Brown = 0;
 int Pink = 0;
 int Black = 0;
 
-//while(ほにゃらら)で待機とかも使う機会ある…カモ…
 
 
 //    if ((mouseX > 1153+bar && mouseX < 1275+bar) && (mouseY > 370 && mouseY < 450) && (pressed == true))

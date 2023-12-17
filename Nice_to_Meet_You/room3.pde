@@ -4,7 +4,7 @@ void room3() {
   //image(room1[0], bar, 0, sizeX, sizeY); //初期位置
 
   switch(page) {
-  case 0://一歩進んだとこ
+  case 0://初期位置
     image(room3[0], bar, 0, sizeX, sizeY); 
     arrowStraight();
     arrowRight();

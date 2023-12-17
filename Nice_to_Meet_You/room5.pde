@@ -10,7 +10,7 @@ void monitor() {
       pressed = false;
     }
   }
-}//出口開くのも作る
+}
 
 
 

@@ -9,12 +9,6 @@ int itemY = gameSizeY / 8;
 //2→消費済み
 
 void setItems() {
-  /*  rect(0, 0, itemX, itemY);       //1
-   rect(0, itemY, itemX, itemY);   //2
-   rect(0, itemY*2, itemX, itemY); //3
-   rect(0, itemY*3, itemX, itemY); //4
-   rect(0, itemY*4, itemX, itemY); //5
-   rect(0, itemY*5, itemX, itemY); //6*/
 
   if (pressed == true) {
     for (int i = 0; i < getItems.length; i++) {

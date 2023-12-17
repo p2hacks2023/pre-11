@@ -1,4 +1,4 @@
- //<>// //<>//
+ //<>//
 PImage[] arrows = new PImage[4];
 int high = 200;
 
@@ -152,7 +152,3 @@ void arrowBack() {
     pressed = false;
   }
 }
-
-
-
-//マウス押しっぱなしでずっと進み続けてしまうのでできれば改善したい!→改善しました！俺の勝ち！！！
