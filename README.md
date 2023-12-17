@@ -1,7 +1,7 @@
 # P2HACKS2023 アピールシート 
 
 プロダクト名  
-... Nice to Meet You!
+... Nice to Meet You
 
 コンセプト  
 ...  非日常的なスリルを脱出ゲームで。
